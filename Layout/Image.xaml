@@ -1,0 +1,35 @@
+﻿<Window x:Class="Layout.Image"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Layout"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Image" Height="600" Width="600">
+    <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+        <StackPanel Margin="15">
+            <Border Width="150" Height="100" Margin="12" BorderBrush="Green" BorderThickness="3">
+                <Viewbox Stretch="None">
+                    <Image Source="Images/Seemann.jpeg" />
+                </Viewbox>
+            </Border>
+            <Border Width="150" Height="100" Margin="12" BorderBrush="Green" BorderThickness="3">
+                <Viewbox Stretch="Fill">
+                    <Image Source="Images/Seemann.jpeg" />
+                </Viewbox>
+            </Border>
+
+            <Border Width="150" Height="100" BorderBrush="Green" BorderThickness="3">
+                <Viewbox Stretch="Uniform">
+                    <Image Source="Images/Seemann.jpeg" />
+                </Viewbox>
+            </Border>
+
+            <Border Width="150" Height="100" Margin="12" BorderBrush="Green" BorderThickness="3">
+                <Viewbox Stretch="UniformToFill">
+                    <Image Source="Images/Seemann.jpeg" />
+                </Viewbox>
+            </Border>
+        </StackPanel>
+    </Viewbox>
+</Window>

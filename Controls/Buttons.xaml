@@ -1,0 +1,67 @@
+﻿<Window x:Class="Controls.Buttons"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Buttons" Height="360" Width="500">
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" x:Name="OrdinaryButton" Height="30" Width="160"
+                VerticalAlignment="Center" Click="OrdinaryButton_OnClick">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Fill="Red" Width="15" Height="15" />
+                    <TextBlock Text=" Click Me, I'm still a button" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <RepeatButton Grid.Row="0" Grid.Column="1" x:Name="RepeatButton" Content="RepeatButton"
+                      Height="30" Width="120" Click="RepeatButton_OnClick"
+                      VerticalAlignment="Center" />
+
+        <ToggleButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="30" Width="120"
+                      Content="ToggleButton" Click="ToggleButton_OnClick" />
+
+        <CheckBox Grid.Row="2" Grid.Column="0" x:Name="CheckBox" Content="CheckBox" Width="76" Height="27"
+                  VerticalAlignment="Center"
+                  IsThreeState="True"
+                  Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"
+                  Indeterminate="ToggleButton_Indeterminate" />
+        <GroupBox Header="A bunch of Radio Buttons" Grid.Row="2" Grid.Column="1">
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <RadioButton x:Name="RadioButton1" Content="You can select me" Height="30"
+                             IsThreeState="False"
+                             Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />
+                <RadioButton x:Name="RadioButton2" Content="Or select me" Height="30"
+                             Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />
+            </StackPanel>
+        </GroupBox>
+<!--        <GroupBox Header="A bunch of Radio Buttons" Grid.Row="2" Grid.Column="1">-->
+<!--            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">-->
+<!--                <RadioButton x:Name="RadioButton1" Content="You can select me" Height="30"-->
+<!--                             IsThreeState="False"-->
+<!--                             Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />-->
+<!--                <RadioButton x:Name="RadioButton2" Content="Or select me" Height="30"-->
+<!--                             Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />-->
+<!--            </StackPanel>-->
+<!--        </GroupBox>-->
+    </Grid>
+</Window>
+<!---->
+<!--<StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">-->
+<!--    <RadioButton x:Name="RadioButton1" Content="You can select me" Height="30"-->
+<!--                         IsThreeState="False"-->
+<!--                         Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />-->
+<!--    <RadioButton x:Name="RadioButton2" Content="Or select me" Height="30"-->
+<!--                         Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />-->
+<!--</StackPanel>-->

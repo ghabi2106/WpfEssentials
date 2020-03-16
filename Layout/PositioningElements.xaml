@@ -1,0 +1,51 @@
+﻿<Window x:Class="Layout.PositioningElements"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Layout"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="PositioningElements" Height="300" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="12" 
+                    Orientation="Vertical">
+            <Button BorderBrush="Red" FontSize="24" Height="45" Content="Hello" 
+                    Margin="6" Width="90"
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Top"
+                    HorizontalAlignment="Center"/>
+            <Button BorderBrush="Red" FontSize="24" Height="45" Content="Hello" 
+                    Margin="6" Width="90"
+                    HorizontalContentAlignment="Right"
+                    VerticalContentAlignment="Bottom"
+                    HorizontalAlignment="Left"/>
+            <Button BorderBrush="Red" FontSize="24" Height="45" Content="Hello" 
+                    Padding="6" Margin="6"
+                    HorizontalAlignment="Right"/>
+            <Button BorderBrush="Red" FontSize="24" Height="45" Content="Hello" 
+                    Padding="6" Margin="6"
+                    HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="12" 
+                    Orientation="Horizontal">
+            <Button BorderBrush="Red" FontSize="24" Content="Hello" 
+                    Padding="6" Margin="6"
+                    VerticalAlignment="Center"/>
+            <Button BorderBrush="Red" FontSize="24" Content="Hello" 
+                    Padding="6" Margin="6"
+                    VerticalAlignment="Top"/>
+            <Button BorderBrush="Red" FontSize="24" Content="Hello" 
+                    Padding="6" Margin="6"
+                    VerticalAlignment="Bottom"/>
+            <Button BorderBrush="Red" FontSize="24" Content="Hello" 
+                    Padding="6" Margin="6"
+                    VerticalAlignment="Stretch"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>

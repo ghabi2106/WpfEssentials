@@ -1,0 +1,46 @@
+﻿<Window x:Class="DataBinding.BindingToCustomType"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dataBinding="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        x:Name="Window" Width="600" Height="400"
+        FontSize="16" WindowStartupLocation="CenterScreen"
+        DataContext="{Binding RelativeSource = {RelativeSource Self}}"
+        Title="BindingToCustomType">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="25" Orientation="Horizontal">
+            <Image VerticalAlignment="Top" x:Name="CraftsmanPicture" Width="150"
+               Source="{Binding Craftsman.PicturePath}"></Image>
+
+            <Grid VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label VerticalAlignment="Center"  FontWeight="Bold" Content="Name:"/>
+                <Label VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Content="LastName:"/>
+                <Label VerticalAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="0"  Content="Age:"/>
+
+                <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" x:Name="Name" Width="120" 
+                       Text="{Binding Path=Craftsman.Name, Mode=OneWay}"/>
+                <TextBlock Text="{Binding Path=Craftsman.LastName, Mode=OneWay}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  x:Name="LastName" Width="120"  />
+                <TextBox Text="{Binding Path=Craftsman.Age, Mode=OneWay}"  VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"  x:Name="Age" Width="120" />
+            </Grid>
+        </StackPanel>
+
+        <Button Grid.Row="1" Width="120" Height="40" Content="ChangeAge" x:Name="ChangeAge"
+                Click="ChangeAge_OnClick"/>
+    </Grid>
+</Window>

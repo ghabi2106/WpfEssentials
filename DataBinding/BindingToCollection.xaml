@@ -1,0 +1,47 @@
+﻿<Window x:Class="DataBinding.BindingToCollection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="BindingToCollection">
+    <Window.Resources>
+        <DataTemplate x:Key="CraftsmanTemplate" DataType="{x:Type local:Craftsman}">
+            <StackPanel Margin="25" Orientation="Horizontal">
+                <Image VerticalAlignment="Top" x:Name="CraftsmanPicture" Width="150" 
+                       Source="{Binding PicturePath}"/>
+
+                <Grid VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Content="Name:" />
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="0"
+                           Content="LastName:" />
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Content="Age:" />
+
+                    <TextBlock VerticalAlignment="Center"
+                               Grid.Row="0" Grid.Column="1" x:Name="Name" Width="120"
+                               Text="{Binding Name}" />
+                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" x:Name="LastName" Width="120"
+                               Text="{Binding LastName}" />
+                    <TextBox VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" x:Name="Age" Width="120"
+                             Text="{Binding Age, IsAsync=True}" />
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <StackPanel>
+        <ListBox ItemTemplate="{StaticResource CraftsmanTemplate}" ItemsSource="{Binding Craftsmen}" Margin="25"/>
+        <Button Margin="6" Width="150" Height="40" Content="Add Craftsman" Click="AddCraftsman_OnClick"></Button>
+    </StackPanel>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="UserAndCustomControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserAndCustomControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <local:RoundButton Width="120" Height="45" CornerRadius="35">
+            <local:RoundButton.Template>
+                <ControlTemplate TargetType="{x:Type local:RoundButton}">
+                    <Border Padding="{TemplateBinding BorderThickness}" Background="{TemplateBinding BorderBrush}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <Border Name="Border" Padding="{TemplateBinding Padding}"
+                                CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="ContentContainer"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </local:RoundButton.Template>
+            <local:RoundButton.Style>
+                <Style TargetType="{x:Type local:RoundButton}" BasedOn="{StaticResource {x:Type Button}}">
+                    <Setter Property="CornerRadius" Value="15" />
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="3" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Padding" Value="12" />
+                </Style>
+            </local:RoundButton.Style>
+        </local:RoundButton>
+    </Grid>
+</Window>

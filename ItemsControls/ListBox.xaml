@@ -1,0 +1,28 @@
+﻿<Window x:Class="ItemsControls.ListBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ListBox" Height="400" Width="600">
+    <Grid>
+        <ListBox x:Name="ComboBox" HorizontalAlignment="Left" Height="202" Margin="55,59,0,0" VerticalAlignment="Top"
+                 Width="309" SelectionChanged="Box_OnSelectionChanged">
+            <StackPanel Orientation="Horizontal" TextSearch.Text="Fowler">
+                <Image Source="Images/FowlerMartin.jpg" Width="100" Height="100"
+                       RenderOptions.BitmapScalingMode="HighQuality" Margin="10" />
+                <TextBlock Text="This is Martin Fowler." />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" TextSearch.Text="Seemann">
+                <Image Source="Images/Seemann.jpeg" Width="100" Height="100"
+                       RenderOptions.BitmapScalingMode="HighQuality" Margin="10" />
+                <TextBlock Text="This is Mark Seemann." />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" TextSearch.Text="Martin">
+                <Image Source="Images/UncleBob.jpg" Width="100" Height="100"
+                       RenderOptions.BitmapScalingMode="HighQuality" Margin="10" />
+                <TextBlock Text="This is Uncle Bob Martin." />
+            </StackPanel>
+        </ListBox>
+    </Grid>
+</Window>
